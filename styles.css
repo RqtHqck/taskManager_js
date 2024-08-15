@@ -1,0 +1,154 @@
+/* Настройка шрифтов */
+@font-face {
+  font-family: 'Sora';
+  src: url('Sora-Regular.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  /* swap - правила отрисовки текста если не будет загружен этот шрифт   */
+  font-display: swap;
+}
+
+/* Переменные для использования в проекте */
+:root {
+  /* Шрифты */
+  --font-family: 'Sora', sans-serif;
+  --font-size-standart: 24px;
+  --font-size-header: 32px;
+  --font-size-big: 52px;
+
+
+  /* ЦВЕТА */
+  --color-dark: #1C1C1C;
+  --color-dark-alternate: #000000;
+  --color-light: #FFFFFF;
+  --color-image: #EEF4ED;
+  --color-background: #DEDEDE;
+  --color-yellow: #FCE000;
+
+  /* Граница */
+  --border-radius: 50px;
+  --border-radius-items: 30px;
+  --border: 1px solid var(--color-dark);
+
+  --task-height: 100px;
+
+  /* Контейнер */
+  --container-width: 1300px;
+
+  --transition-duration: 0.3s;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: var(--font-size-standart);
+  line-height: 1.75;    /* Вертикальное расстояние между строками */
+  color: var(--color-dark);
+  background-color: var(--color-dark);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+} 
+
+a {
+  text-decoration: none;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+.button {
+  /* Чтобы можно было примернить height */
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background-color: var(--color-light);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.container {
+  margin-inline: auto;  /* Центрируем контент по горизонтали */
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.todo {
+  width: 1500px;   
+  height: 800px;
+  margin: 20px auto;
+  display: flex;
+  gap: 20px; 
+  background-color: var(--color-background);
+}
+
+.todo-panel, .todo-content {
+  background-color: var(--color-light);
+  border: var(--border);
+  box-shadow: 0 0px 40px rgba(0, 0, 0, 0.2); 
+}
+
+.todo-panel {
+  flex: 1;
+  max-width: 400px;
+  font-size: var(--font-size-standart);
+  font-weight: 600;
+  border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+}
+
+.todo-burger-button {
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.todo-panel-list {
+  padding-inline: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.todo-panel-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px
+}
+
+.panel-item-span {
+  padding-left: 20px;
+}
+
+.is-current {
+  background-color: #1C1C1C;
+  border: var(--border);
+  border-radius: var(--border-radius-items);
+  color: var(--color-image);
+}
+
+.todo-content {
+  flex:2;
+  border-radius: var(--border-radius) 0px 0px var(--border-radius);
+}
+
