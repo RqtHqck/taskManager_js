@@ -90,3 +90,13 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+/* Сброс инпут поля */
+input {
+    border: none; /* Убирает обводку */
+    outline: none; /* Убирает обводку при фокусе */
+    padding: 0; /* Убирает внутренние отступы */
+    margin: 0; /* Убирает внешние отступы */
+    box-shadow: none; /* Убирает тени */
+    background: none; /* Убирает фоновый цвет */
+}

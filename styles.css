@@ -24,13 +24,14 @@
   --color-image: #EEF4ED;
   --color-background: #DEDEDE;
   --color-yellow: #FCE000;
+  --color-yellow-rgb: 252,224,0;
 
   /* Граница */
   --border-radius: 50px;
   --border-radius-items: 30px;
   --border: 1px solid var(--color-dark);
 
-  --task-height: 100px;
+  --pole-height: 80px;
 
   /* Контейнер */
   --container-width: 1300px;
@@ -153,7 +154,8 @@ background-color: var(--color-light);
 .todo-panel-item {
   display: inline-flex;
   align-items: center;
-  padding: 10px
+  padding: 10px;
+  white-space: nowrap;
 }
 
 .panel-item-span {
@@ -163,7 +165,7 @@ background-color: var(--color-light);
 .todo-content {
   flex:2;
   border-radius: var(--border-radius) 0px 0px var(--border-radius);
-  padding: 40px;
+  padding: 20px;
 }
 
 .header {
@@ -171,7 +173,9 @@ background-color: var(--color-light);
   flex-direction: row;
   justify-content: space-between;
   font-weight: 900;
-  margin-bottom: 40px
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-inline: 30px;
 }
 
 .header-title {
@@ -195,4 +199,56 @@ background-color: var(--color-light);
 
 .header-list-item img {
   margin-right: 6px; /* Отступ справа от изображения */
+}
+
+.input-pole {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: var(--pole-height);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-light);
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1); 
+
+}
+
+.input-pole form {
+  width: 100%;
+}
+
+.input-main-input {
+  padding-left: 30px;
+  text-align: left;
+  width: 70%;
+  height: calc(var(--pole-height) - 20px);
+  line-height: 1.7px;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--color-dark);
+
+}
+
+.input-main-input::placeholder {
+  color: var(--color-dark);
+}
+
+.input-main-button {
+  position: absolute;
+  right: -5px;
+  white-space: nowrap;
+  font-size: var(--font-size-standart);
+  font-weight: 900;
+  padding-inline: 20px;
+  height: var(--pole-height);
+  border: 1px solid var(--color-yellow);
+  border-radius: var(--border-radius);
+  background-color: var(--color-yellow);
+}
+
+.input-main-button:hover {
+  padding-inline: 30px;  
+  border: var(--border);
+  box-shadow: -8px 8px 30px rgba(var(--color-yellow-rgb), 0.8);
 }
