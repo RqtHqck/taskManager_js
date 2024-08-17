@@ -70,13 +70,29 @@ svg * {
   align-items: center;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 12px;
   letter-spacing: 1.2px;
-  text-transform: uppercase;
-  background-color: var(--color-light);
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
   border: none;
-  border-radius: var(--border-radius);
 }
+
+.button:hover {
+  cursor: pointer;
+}
+
+.is-current {
+  background-color: #1C1C1C;
+  border: var(--border);
+  border-radius: var(--border-radius-items);
+  color: var(--color-image);
+  padding: 10px;
+}
+
+.button:hover.is-current {
+  cursor: auto;
+} 
 
 .container {
   margin-inline: auto;  /* Центрируем контент по горизонтали */
@@ -97,7 +113,7 @@ svg * {
 
 .todo {
   width: 1500px;   
-  height: 800px;
+  height: 840px;
   margin: 20px auto;
   display: flex;
   gap: 20px; 
@@ -119,15 +135,19 @@ svg * {
 }
 
 .todo-burger-button {
-  padding: 40px;
+  padding: 30px;
   margin-bottom: 40px;
 }
 
+.burger-button{
+background-color: var(--color-light);
+}
+
 .todo-panel-list {
-  padding-inline: 30px;
+  padding-inline: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .todo-panel-item {
@@ -140,15 +160,39 @@ svg * {
   padding-left: 20px;
 }
 
-.is-current {
-  background-color: #1C1C1C;
-  border: var(--border);
-  border-radius: var(--border-radius-items);
-  color: var(--color-image);
-}
-
 .todo-content {
   flex:2;
   border-radius: var(--border-radius) 0px 0px var(--border-radius);
+  padding: 40px;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 900;
+  margin-bottom: 40px
+}
+
+.header-title {
+  font-size: var(--font-size-header);
+  
+}
+
+.header-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+}
+
+.header-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-inline: 10px;
+}
+
+.header-list-item img {
+  margin-right: 6px; /* Отступ справа от изображения */
+}
