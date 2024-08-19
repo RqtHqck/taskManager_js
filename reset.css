@@ -91,6 +91,14 @@ input, select {
     vertical-align:middle;
 }
 
+button:active, button:focus {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
 /* Сброс инпут поля */
 input {
     border: none; /* Убирает обводку */
@@ -100,3 +108,10 @@ input {
     box-shadow: none; /* Убирает тени */
     background: none; /* Убирает фоновый цвет */
 }
+
+ .checkbox {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }

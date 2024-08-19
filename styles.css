@@ -14,7 +14,7 @@
   --font-family: 'Sora', sans-serif;
   --font-size-standart: 24px;
   --font-size-header: 32px;
-  --font-size-big: 52px;
+  --font-size-big: 38px;
 
 
   /* ЦВЕТА */
@@ -31,7 +31,7 @@
   --border-radius-items: 30px;
   --border: 1px solid var(--color-dark);
 
-  --pole-height: 80px;
+  --task-height: 80px;
 
   /* Контейнер */
   --container-width: 1300px;
@@ -50,7 +50,6 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
-  text-transform: uppercase;
 } 
 
 a {
@@ -158,6 +157,11 @@ background-color: var(--color-light);
   white-space: nowrap;
 }
 
+.todo-panel-item img {
+  width: 50px;
+  height: 50px;
+}
+
 .panel-item-span {
   padding-left: 20px;
 }
@@ -175,12 +179,12 @@ background-color: var(--color-light);
   font-weight: 900;
   margin-bottom: 40px;
   padding-top: 20px;
-  padding-inline: 30px;
+  padding-inline: 40px;
 }
 
 .header-title {
-  font-size: var(--font-size-header);
-  
+  display: block;
+  font-size: var(--font-size-big);
 }
 
 .header-list {
@@ -201,17 +205,21 @@ background-color: var(--color-light);
   margin-right: 6px; /* Отступ справа от изображения */
 }
 
+.header-list-item span {
+  font-size: 20px;
+}
+
 .input-pole {
   width: 100%;
   display: flex;
   align-items: center;
   position: relative;
-  height: var(--pole-height);
+  height: 60px;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-light);
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1); 
-
+  margin-bottom: 40px;
 }
 
 .input-pole form {
@@ -219,10 +227,10 @@ background-color: var(--color-light);
 }
 
 .input-main-input {
-  padding-left: 30px;
+  padding-left: 20px;
   text-align: left;
   width: 70%;
-  height: calc(var(--pole-height) - 20px);
+  height: 40px;
   line-height: 1.7px;
   font-size: 18px;
   font-weight: 300;
@@ -241,7 +249,7 @@ background-color: var(--color-light);
   font-size: var(--font-size-standart);
   font-weight: 900;
   padding-inline: 20px;
-  height: var(--pole-height);
+  height: 60px;
   border: 1px solid var(--color-yellow);
   border-radius: var(--border-radius);
   background-color: var(--color-yellow);
@@ -252,3 +260,110 @@ background-color: var(--color-light);
   border: var(--border);
   box-shadow: -8px 8px 30px rgba(var(--color-yellow-rgb), 0.8);
 }
+
+.main {
+  max-height: 550px;
+  /* padding-left: 10px; */
+  overflow-y: auto;
+  /* overflow-x: hidden; */
+}
+
+.task-block-title {
+  padding: 0px 20px 20px;
+  font-size: var(--font-size-standart);
+  font-weight: 700;
+}
+
+.task {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--task-height);
+  padding-inline: 20px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-light);
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px; 
+}
+
+.task-data-items, .task-checkbox-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-current {
+  width: 92%;
+}
+
+.task-completed {
+  width: 86%;
+} 
+
+.task-container {
+  position: relative;
+}
+
+.dropdown-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 20px 18px;
+  gap: 6px;
+  font-size: var(--font-size-standart);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-dropdown-list {
+  padding-left: 40px;
+  display: none; /* Используем flex для флексбоксов */
+  flex-direction: column; /* Для отображения элементов вертикально */
+  list-style: none;
+  margin-top: 10px; /* Добавляем отступ сверху */
+  width: 100%; /* Занимаем доступную ширину */
+
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.task-dropdown-list li {
+  cursor: default;
+}
+
+.dropdown-checkbox:checked + .dropdown-label + .task-dropdown-list {
+  display: flex;
+}
+
+.task-title {
+  display:flexbox;
+  width: 80%;
+  font-size: 20px;
+}
+
+.task-data-items {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 6px
+}
+/* =========Делает кастомный чекбокс */
+.checkbox-label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 20px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+.checkbox:checked + .checkbox-label {
+  transition-duration: var(--transition-duration);
+  background-color: var(--color-yellow);
+  box-shadow: -4px 4px 16px rgba(var(--color-yellow-rgb), 0.7);;
+}
+/* =========*/
