@@ -265,7 +265,8 @@ background-color: var(--color-light);
   max-height: 550px;
   /* padding-left: 10px; */
   overflow-y: auto;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
+  overflow: visible;
 }
 
 .task-block-title {
@@ -280,12 +281,13 @@ background-color: var(--color-light);
   align-items: center;
   justify-content: space-between;
   height: var(--task-height);
-  padding-inline: 20px;
+  padding-inline: 30px;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-light);
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+  cursor: default;
 }
 
 .task-data-items, .task-checkbox-items {
@@ -324,22 +326,26 @@ background-color: var(--color-light);
   list-style: none;
   margin-top: 10px; /* Добавляем отступ сверху */
   width: 100%; /* Занимаем доступную ширину */
-
   transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.task-dropdown-list li {
-  cursor: default;
 }
 
 .dropdown-checkbox:checked + .dropdown-label + .task-dropdown-list {
   display: flex;
 }
 
-.task-title {
-  display:flexbox;
-  width: 80%;
+/* Стиль для поворота иконки при раскрытии списка */
+.dropdown-checkbox:checked + .dropdown-label #dropdown-img {
+  transform: rotate(-90deg); /* Поворачиваем изображение на 180 градусов */
+  transition: transform 0.3s ease; /* Добавляем плавную анимацию */
+}
+
+#dropdown-img {
+  transition: transform 0.3s ease; /* Плавная анимация для начального состояния */
+}
+
+.task-checkbox-items {
   font-size: 20px;
+  width: 80%;
 }
 
 .task-data-items {
@@ -349,8 +355,9 @@ background-color: var(--color-light);
   /* justify-content: space-between; */
   gap: 6px
 }
+
 /* =========Делает кастомный чекбокс */
-.checkbox-label {
+.checkbox-radio {
   cursor: pointer;
   position: relative;
   display: block;
@@ -360,8 +367,9 @@ background-color: var(--color-light);
   background-color: transparent;
   border-radius: var(--border-radius);
   border: var(--border);
+  
 }
-.checkbox:checked + .checkbox-label {
+.checkbox:checked + .checkbox-radio {
   transition-duration: var(--transition-duration);
   background-color: var(--color-yellow);
   box-shadow: -4px 4px 16px rgba(var(--color-yellow-rgb), 0.7);;

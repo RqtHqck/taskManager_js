@@ -91,14 +91,6 @@ input, select {
     vertical-align:middle;
 }
 
-button:active, button:focus {
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-}
-
 /* Сброс инпут поля */
 input {
     border: none; /* Убирает обводку */
@@ -114,4 +106,6 @@ input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    opacity: 0;
+    pointer-events: none;
   }
