@@ -263,25 +263,27 @@ background-color: var(--color-light);
 
 .main {
   max-height: 550px;
-  /* padding-left: 10px; */
-  overflow-y: auto;
-  overflow-x: hidden;
-  overflow: visible;
+  padding-left: 25px;
+  overflow-y:auto;
+  overflow-x: visible;
+  /* overflow: auto; */
+  border-radius: var(--border-radius);
 }
 
-.task-block-title {
+.main-title {
   padding: 0px 20px 20px;
   font-size: var(--font-size-standart);
   font-weight: 700;
 }
 
 .task {
-  display: inline-flex;
+  display: flex;
+  width: 92%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: var(--task-height);
-  padding-inline: 30px;
+  min-height: var(--task-height);
+  padding: 20px 30px;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-light);
@@ -290,24 +292,36 @@ background-color: var(--color-light);
   cursor: default;
 }
 
-.task-data-items, .task-checkbox-items {
+.task-checkbox-items, .task-data-items {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.task-current {
-  width: 92%;
+.task-title {
+  flex-basis: 100%;
+  font-size: 20px;
+  /* white-space: wrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
 }
 
-.task-completed {
-  width: 86%;
-} 
+.task-data-items {
+  /* position: relative; */
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px
+}
 
-.task-container {
+.task-delete-button {
+  /* Сдвигаем кнопку удаления задачи, потому что она почему-то криво выглядит на вёрстке  */
   position: relative;
+  top: 1px
 }
 
+/* =====Акардеон меню выпадающий список */
 .dropdown-label {
   position: relative;
   display: flex;
@@ -343,27 +357,14 @@ background-color: var(--color-light);
   transition: transform 0.3s ease; /* Плавная анимация для начального состояния */
 }
 
-.task-checkbox-items {
-  font-size: 20px;
-  width: 80%;
-}
-
-.task-data-items {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
-  gap: 6px
-}
-
-/* =========Делает кастомный чекбокс */
+/* =========Кастомный чекбокс */
 .checkbox-radio {
   cursor: pointer;
   position: relative;
   display: block;
   width: 20px;
   aspect-ratio: 1;
-  margin-right: 10px;
+  margin-right: 20px;
   background-color: transparent;
   border-radius: var(--border-radius);
   border: var(--border);

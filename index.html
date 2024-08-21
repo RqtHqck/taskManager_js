@@ -77,57 +77,41 @@
           </button>
         </nav>
         <main class="main">
-          <div class="task-container">
-            <h2 class="task-block-title">Список задач</h2>
-            <ul class="task-list">
-              <li class="task task-current">
-                <div class="task-checkbox-items">
-                  <label>
-                    <input type="checkbox" class="checkbox done-btn">
-                    <span class="checkbox-radio"></span>
-                  </label>
-                  <div>Задача 3</div>
-                </div>
-                <div class="task-data-items">
-                  <span><time datetime="2024-08-19">20.08.2024</time></span>
-                  <button class="button task-favourite-button" id="task_to_favourite" title="Task to favourite"><img src="./icons/main/favourite-empty-normal.png" alt="Favourite" width="20" height="20"></button>
-                  <button class="button task-delete-button" id="delete_task" title="Delete task"><img src="./icons/main/delete-task.png" alt="Close" width="22" height="22"></button>
-                </div>
-              </li>
-              <li class="task task-current">
-                <div class="task-checkbox-items">
-                  <label>
-                    <input type="checkbox" class="checkbox done-btn">
-                    <span class="checkbox-radio"></span>
-                  </label>
-                  <div>Задача 23</div>
-                </div>
-                <div class="task-data-items">
-                  <span><time datetime="2024-08-19">01.08.2024</time></span>
-                  <button class="button task-favourite-button" id="task_to_favourite" title="Task to favourite"><img src="./icons/main/favourite-empty-normal.png" alt="Favourite" width="20" height="20"></button>
-                  <button class="button task-delete-button" id="delete_task" title="Delete task"><img src="./icons/main/delete-task.png" alt="Close" width="22" height="22"></button>
-                </div>
-              </li>
-            </ul>
-            <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox checkbox">
-            <label for="dropdown-toggle" class="dropdown-label"><img src="./icons/main/hide-icon.png" alt="Hide icon" id="dropdown-img" width="20px" height="24px"><span>Выполненные задачи</span></label>
-            <ul class="resolved-task-list task-dropdown-list">
-              <li class="task task-completed">
-                <div class="task-checkbox-items">
-                  <div class="task-title">Задача 2</div>
-                </div>
-                <div class="task-data-items">
-                  <span><time datetime="2024-08-19">19.08.2024</time></span>
-                  <button class="button task-favourite-button" id="taskToFavourite" title="Task to favourite"><img src="./icons/main/favourite-empty-normal.png" alt="Favourite" width="20" height="20"></button>
-                  <button class="button task-delete-button" id="deleteTask" title="Delete task"><img src="./icons/main/delete-task.png" alt="Close" width="22" height="22"></button>
-                </div>
-              </li>
-            </ul>
-            </div>
+          <h2 class="main-title">Список задач</h2>
+          <ul class="task-list">
+            <!-- <li class="task task-current">
+              <div class="task-checkbox-items">
+                <label>
+                  <input type="checkbox" class="checkbox done-btn">
+                  <span class="checkbox-radio"></span>
+                </label>
+                <div>Задача 3</div>
+              </div>
+              <div class="task-data-items">
+                <span><time datetime="2024-08-19">20.08.2024</time></span>
+                <button class="button task-favourite-button" id="task_to_favourite" title="Task to favourite"><img src="./icons/main/favourite-empty-normal.png" alt="Favourite" width="20" height="20"></button>
+                <button class="button task-delete-button" id="delete_task" title="Delete task"><img src="./icons/main/delete-task.png" alt="Close" width="22" height="22"></button>
+              </div>
+            </li> -->
+          </ul>
+          <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox checkbox">
+          <label for="dropdown-toggle" class="dropdown-label"><img src="./icons/main/hide-icon.png" alt="Hide icon" id="dropdown-img" width="20px" height="24px"><h2>Выполненные задачи</h2></label>
+          <ul class="resolved-task-list task-dropdown-list">
+            <!-- <li class="task task-completed">
+              <div class="task-checkbox-items">
+                <div class="task-title">Задача 2</div>
+              </div>
+              <div class="task-data-items">
+                <span><time datetime="2024-08-19">19.08.2024</time></span>
+                <button class="button task-favourite-button" id="taskToFavourite" title="Task to favourite"><img src="./icons/main/favourite-empty-normal.png" alt="Favourite" width="20" height="20"></button>
+                <button class="button task-delete-button" id="deleteTask" title="Delete task"><img src="./icons/main/delete-task.png" alt="Close" width="22" height="22"></button>
+              </div>
+            </li> -->
+          </ul>
         </main>
         <footer class="footer"></footer>
     </div>
   </div>
-  <script src="./sctipt.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
