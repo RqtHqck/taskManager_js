@@ -101,11 +101,3 @@ input {
     background: none; /* Убирает фоновый цвет */
 }
 
- .checkbox {
-    position: absolute;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    opacity: 0;
-    pointer-events: none;
-  }

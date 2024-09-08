@@ -109,6 +109,8 @@ svg * {
   clip-path: inset(100%) !important;
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
+
+  
 }
 
 .todo {
@@ -278,32 +280,36 @@ background-color: var(--color-light);
 
 .task {
   display: flex;
-  width: 92%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  max-width: 92%;
   min-height: var(--task-height);
   padding: 20px 30px;
+  margin-bottom: 10px;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-light);
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
   cursor: default;
 }
 
-.task-checkbox-items, .task-data-items {
+.task-checkbox-items {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
 }
 
 .task-title {
-  flex-basis: 100%;
-  font-size: 20px;
-  /* white-space: wrap; */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
+  width: 70%;
+  margin-left: 10px;
+  /* overflow: hidden;  
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.task-title-done {
+  text-decoration: line-through;
 }
 
 .task-data-items {
@@ -350,14 +356,13 @@ background-color: var(--color-light);
 /* Стиль для поворота иконки при раскрытии списка */
 .dropdown-checkbox:checked + .dropdown-label #dropdown-img {
   transform: rotate(-90deg); /* Поворачиваем изображение на 180 градусов */
-  transition: transform 0.3s ease; /* Добавляем плавную анимацию */
 }
 
 #dropdown-img {
   transition: transform 0.3s ease; /* Плавная анимация для начального состояния */
 }
 
-/* =========Кастомный чекбокс */
+/* =========Кастомный чекбокс из span*/
 .checkbox-radio {
   cursor: pointer;
   position: relative;
@@ -368,11 +373,18 @@ background-color: var(--color-light);
   background-color: transparent;
   border-radius: var(--border-radius);
   border: var(--border);
-  
 }
 .checkbox:checked + .checkbox-radio {
   transition-duration: var(--transition-duration);
   background-color: var(--color-yellow);
   box-shadow: -4px 4px 16px rgba(var(--color-yellow-rgb), 0.7);;
+}
+.checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 0;
+  pointer-events: none;
 }
 /* =========*/
