@@ -77,13 +77,19 @@
           </button>
         </nav>
         <main class="main">
-          <div class="tasks"><ul class="task-list"></ul></div>
           <h2 class="main-title">Список задач</h2>
+          <div class="tasks"><ul class="task-list"></ul></div>
           <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox checkbox">
-          <label for="dropdown-toggle" class="dropdown-label"><img src="./icons/main/hide-icon.png" alt="Hide icon" id="dropdown-img" width="20px" height="24px"><h2>Выполненные задачи</h2></label>
-          <div class="tasks"></div><ul class="resolved-task-list task-dropdown-list"></ul></div>
+          <label for="dropdown-toggle" class="dropdown-label">
+            <img src="./icons/main/hide-icon.png" alt="Hide icon" id="dropdown-img" width="20px" height="24px">
+            <h2>Выполненные задачи</h2>
+          </label>
+          <div class="task-dropdown-list tasks">
+            <ul class="resolved-task-list">
+            </ul>
+          </div>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer"></footer>  
     </div>
   </div>
   <script async src="js/script.js?speed=0"></script>
